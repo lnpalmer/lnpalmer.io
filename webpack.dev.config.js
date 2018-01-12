@@ -35,6 +35,10 @@ module.exports = {
           babelrc: false,
         },
       },
+      {
+        test: /\.css$/,
+        loader: 'style-loader!css-loader'
+      },
     ],
   },
   plugins: [

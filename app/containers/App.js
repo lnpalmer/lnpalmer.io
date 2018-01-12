@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { Button } from 'reactstrap'
 
 import Counter from '../components/Counter'
 
@@ -22,8 +23,8 @@ class App extends Component {
     return (
       <div>
         <h2>lnpalmer</h2>
-        <button onClick={clickUp}>Plus</button>
-        <button onClick={clickDown}>Minus</button>
+        <Button color="danger" onClick={clickUp}>Plus</Button>
+        <Button color="info" onClick={clickDown}>Minus</Button>
         <Counter value={count}/>
       </div>
     )
