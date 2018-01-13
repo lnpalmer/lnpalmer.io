@@ -1,10 +1,10 @@
 const initialState = {
-  count: 0,
+  view: 'ABOUT',
 }
 
 function reducer(state = initialState, action) {
-  if (action.type == 'SET_COUNT') {
-    state = {...state, count: action.value}
+  if (action.type == 'SET_VIEW') {
+    state = {...state, view: action.value}
   }
 
   return state

@@ -1,31 +1,31 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { Button } from 'reactstrap'
+import { Container } from 'reactstrap'
 
 import Counter from '../components/Counter'
+import Navigator from './Navigator'
+import About from './About'
+import Projects from './Projects'
 
 @connect(store => {
-  return {count: store.count}
+  return {view: store.view}
 })
 class App extends Component {
 
   render() {
-    const { count, dispatch } = this.props
+    const { view, dispatch } = this.props
 
-    const clickUp = evt => {
-      dispatch({type: 'SET_COUNT', value: count + 1})
-    }
-
-    const clickDown = evt => {
-      dispatch({type: 'SET_COUNT', value: count - 1})
-    }
+    const View = {
+      'ABOUT': About,
+      'PROJECTS': Projects,
+    }[view]
 
     return (
       <div>
-        <h2>lnpalmer</h2>
-        <Button color="danger" onClick={clickUp}>Plus</Button>
-        <Button color="info" onClick={clickDown}>Minus</Button>
-        <Counter value={count}/>
+        <Navigator/>
+        <Container>
+          <View/>
+        </Container>
       </div>
     )
   }
