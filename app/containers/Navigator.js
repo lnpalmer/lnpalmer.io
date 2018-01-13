@@ -25,6 +25,9 @@ class Navigator extends Component {
           <NavItem>
             <NavLink href='https://lnpalmer.github.io'>blog</NavLink>
           </NavItem>
+          <NavItem>
+            <NavLink href='mailto:lukas@lnpalmer.io'>contact</NavLink>
+          </NavItem>
         </Nav>
       </Navbar>
     )
